@@ -1,0 +1,19 @@
+"use server"
+
+import { getMyToken } from "@/utilities/token"
+import axios from "axios"
+
+export async function cartUpdateAction(id : string , count :number){
+
+const token = await getMyToken()
+
+if(!token){
+    throw Error('login first')
+
+}
+const value = {count:count}
+
+const {data}= await axios.put(`https://ecommerce.routemisr.com/api/v1/cart/${id}` , value , {headers:{token:token}})
+
+return data
+}
