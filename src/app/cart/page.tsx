@@ -20,10 +20,8 @@ function Cart() {
   } = useContext(cartContext);
 
   async function removeItem(id: string) {
-    const data = await removeCartItem(id);
-    if (data.status === "success") {
-      toast.success(data.message);
-    }
+    await removeCartItem(id);
+    toast.success("Item removed from cart.");
   }
 
   if (isLoading) {
