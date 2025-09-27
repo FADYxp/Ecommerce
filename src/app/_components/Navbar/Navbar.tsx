@@ -12,7 +12,8 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const { data: session, status } = useSession();
-  const {numOfCart} : { numOfCart : Number }  = useContext(cartContext);
+const { numOfCart } = useContext(cartContext) as { numOfCart: number };
+
 
   return (
     <div className="fixed top-0 left-0 w-full bg-slate-100 py-5 shadow-md z-50">
