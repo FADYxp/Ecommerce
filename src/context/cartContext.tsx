@@ -3,22 +3,23 @@ import { cartUpdateAction } from '@/cartACTIONS/cartUpdate';
 import { clearCartAction } from '@/cartACTIONS/clearCart';
 import { getUserCartAction } from '@/cartACTIONS/getUserCart'
 import { removeCartItemAction } from '@/cartACTIONS/removeCartItem';
-import { cart } from '@/types/cart.type';
+import { cart, CartProduct } from '@/types/cart.type';
 import React, { createContext, useEffect, useState } from 'react'
 
 
 type CartContextType = {
   numOfCart: number;
-  products: any[];
+  products: CartProduct[];
   totalPrice: number;
   isLoading: boolean;
-  addProductToCart: (id: string) => Promise<any>;
+  addProductToCart: (id: string) => Promise<CartProduct | void>;
   removeCartItem: (id: string) => Promise<void>;
   updateCart: (id: string, count: number) => Promise<void>;
   clearCart: () => Promise<void>;
   cartId: string;
   afterPayment: () => void;
 };
+
 
 export const cartContext = createContext<CartContextType>({
   numOfCart: 0,
@@ -42,7 +43,7 @@ const [totalPrice, setTotalPrice] = useState(0)
 const [isLoading, setIsLoading] = useState(false)
 const [cartId, setCartId] = useState('')
 
-const [products, setProducts] = useState([])
+const [products, setProducts] = useState<CartProduct[]>([])
 
 
  function afterPayment () {

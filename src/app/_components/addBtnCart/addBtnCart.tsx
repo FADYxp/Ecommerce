@@ -13,13 +13,12 @@ async function handleAddToCart() {
     const data =await addProductToCart(id)
     console.log(data);
 
-    if(data.status === "success"){
-        toast.success("Added to cart✅" , {duration : 2000 , position: "top-center" })
-    }else{
+if (data && 'status' in data && data.status === "success") {
+  toast.success("Added to cart✅", { duration: 2000, position: "top-center" });
+} else {
+  toast.error("failed!", { duration: 2000, position: "top-center" });
+}
 
-        toast.error("failed!" , {duration : 2000 , position: "top-center" })
-
-    }
     
 }
 

@@ -1,3 +1,5 @@
+
+
 export interface cart {
   status: string
   numOfCartItems: number
@@ -23,7 +25,7 @@ export interface CartProduct {
 }
 
 export interface Product2 {
-  subcategory: Subcategory[]
+  subcategory: Subcategory
   _id: string
   title: string
   quantity: number
