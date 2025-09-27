@@ -5,7 +5,7 @@ import axios from "axios"
 
 export async function removeCartItemAction(id :string){
 
-const token = await getMyToken()
+const {token} = await getMyToken()
 
 if(!token){
     throw Error("loginnnnn ")

@@ -5,7 +5,9 @@ import axios from "axios";
 
 export async function AddToCartAction(id : string) {
 
-    const token = await getMyToken()
+    const {token} = await getMyToken()
+    console.log(token);
+    
     const values ={
     productId: id
 }
@@ -14,5 +16,5 @@ export async function AddToCartAction(id : string) {
         headers:{token:token}
     } )
 
-    return data
+    return data 
 }

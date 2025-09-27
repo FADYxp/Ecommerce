@@ -5,7 +5,7 @@ import { getMyToken } from "@/utilities/token";
 import axios from "axios";
 
 export async function AddToWishlistAction(id: string) {
-  const token = await getMyToken();
+  const {token} = await getMyToken();
   if (!token) throw Error("login first");
 
   const values = { productId: id };

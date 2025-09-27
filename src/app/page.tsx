@@ -6,10 +6,12 @@ import ProductCard from "./_components/ProductCard/ProductCard";
 import MainSlider from "./_components/MainSlider/MainSlider";
 import CategorySlider from "./_components/CategorySlider/CategorySlider";
 import { Product } from "@/types/product.type";
+import { getMyToken } from "@/utilities/token";
 
 async function Home() {
   const data: Product[] = await getAllProducts();
   
+
 
   return (
     <>

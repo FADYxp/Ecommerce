@@ -7,7 +7,7 @@ export async function middleware(request: NextRequest) {
 const token = await getToken({req:request })
 const {pathname} = request.nextUrl
 const authPage = ["/login" , "/signup" , "/forgotPassword" , "/verifyCode" , "/resetPassword"]
-const routes = ["/" ,"/cart" , "/brands" , "/categories" , "/productDetails" , "/wishlist" , "/payment" , , '/allOrders']
+const routes = ["/" ,"/cart" , "/brands" , "/categories" , "/productDetails" , "/wishlist" , "/payment" , "/allOrders"]
 
 if (!token && routes.includes(pathname)){return NextResponse.redirect(new URL('/login', request.url))}
 if (token && authPage.includes(pathname)){return NextResponse.redirect(new URL('/', request.url))}
@@ -28,5 +28,5 @@ if (token && authPage.includes(pathname)){return NextResponse.redirect(new URL('
 
   
 export const config = {
-  matcher: ["/" ,"/cart" , "/brands" , "/categories" , "/productDetails" , "/wishlist" , "/login" , "/signup" , "/forgotPassword" , "/verifyCode" , "/resetPassword" , "/payment" , '/allOrders'],
+  matcher: ["/" ,"/cart" , "/brands" , "/categories" , "/productDetails" , "/wishlist" , "/login" , "/signup" , "/forgotPassword" , "/verifyCode" , "/resetPassword" , "/payment" , "/allOrders"],
 }

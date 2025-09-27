@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 export async function cashPaymentAction(id : string, values : object) {
-    const token = await getMyToken()
+    const {token} = await getMyToken()
 
     if(!token){
         throw new Error('LogIn First')

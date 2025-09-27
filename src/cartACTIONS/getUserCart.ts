@@ -4,7 +4,7 @@ import { getMyToken } from "@/utilities/token"
 
 export async function getUserCartAction() {
     
-    const token = await getMyToken()
+    const {token} = await getMyToken()
 
     if(!token){
         throw Error("login first")

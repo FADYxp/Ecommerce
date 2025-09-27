@@ -46,7 +46,7 @@ const [cartId, setCartId] = useState('')
 const [products, setProducts] = useState<CartProduct[]>([])
 
 
- function afterPayment () {
+ function afterPayment (): void {
   setCartId('')
   setNumOfCart(0)
   setTotalPrice(0)
