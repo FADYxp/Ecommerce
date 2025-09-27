@@ -5,7 +5,7 @@ import { cartContext } from '@/context/cartContext'
 import React, { useContext } from 'react'
 import { toast } from 'sonner'
 
-function AddBtnCart({id}) {
+function AddBtnCart({id} : {id : string}) {
 
   const {addProductToCart } = useContext(cartContext)
 async function handleAddToCart() {
