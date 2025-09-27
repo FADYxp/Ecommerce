@@ -12,8 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { LoginSchema, LoginSchemaType } from "@/Schema/Login.S";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios, { AxiosError } from "axios";
-import { redirect, useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
